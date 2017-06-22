@@ -2,16 +2,22 @@
 
 set -e
 
+
+SCRIPT_DIR=$(dirname $0)
+ADDED_DIR=${SCRIPT_DIR}/added
 mkdir -p /opt/app-root/src/
+mkdir -p /opt/subserv/bin
 # unpack
 {
     cd /tmp/artifacts
     tar xzf "$DISTRO_NAME.tar.gz"
     mv *.js /opt/app-root/src
+    
+    mv $ADDED_DIR/launch.sh /opt/subserv/bin
 }
-npm install -g debug && npm install -g bluebird && npm install -g rhea
 
 #need to create home dir for community images
 mkdir -p /home/jboss
 chown 185 /home/jboss
 chmod -R a+rwX /home/jboss
+chmod -R a+rwX /opt/app-root/

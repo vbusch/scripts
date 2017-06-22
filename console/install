@@ -2,12 +2,19 @@
 
 set -e
 
+SCRIPT_DIR=$(dirname $0)
+ADDED_DIR=${SCRIPT_DIR}/added
+
 mkdir -p /opt/app-root/src/
+mkdir -p /opt/console/bin/
+
 # unpack
 {
     cd /tmp/artifacts
     tar xzf "$DISTRO_NAME.tar.gz"
     mv * /opt/app-root/src
+    mv $ADDED_DIR/launch.sh /opt/console/bin
+    
 }
 
 #need to create home dir for community images
