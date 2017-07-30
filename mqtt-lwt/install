@@ -10,7 +10,7 @@ mkdir --parents /opt/mqtt-lwt
 # unpack
 {
     cd /tmp/artifacts
-    tar xzf "$DISTRO_NAME.tar.gz"
+    tar xzf "$DISTRO_NAME.tgz"
     mv mqtt-lwt.jar /opt/mqtt-lwt/
 }
 

@@ -10,7 +10,7 @@ mkdir -p /opt/ragent/bin
 # unpack
 {
     cd /tmp/artifacts
-    tar xzf "$DISTRO_NAME.tar.gz"
+    tar xzf "$DISTRO_NAME.tgz"
     mv *.js /opt/app-root/src
 
     mv $ADDED_DIR/launch.sh /opt/ragent/bin

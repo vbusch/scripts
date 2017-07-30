@@ -6,6 +6,7 @@ mkdir -p /opt
 # unpack
 {
     cd /tmp/artifacts
+    tar xf router-metrics.tgz
     mv *.py /opt/
 }
 pip install prometheus_client

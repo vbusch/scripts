@@ -3,11 +3,13 @@
 set -e
 
 SCRIPT_DIR=$(dirname $0)
-ADDED_DIR=${SCRIPT_DIR}/added
 
 mkdir --parents /etc/qpid-dispatch/
 
 # unpack
 {
-    mv $ADDED_DIR/run_qdr.sh $ADDED_DIR/qdrouterd.conf.template $ADDED_DIR/colocated-topic.snippet $ADDED_DIR/ssl.snippet $ADDED_DIR/subscriptions.snippet $ADDED_DIR/amqp-kafka-bridge.snippet /etc/qpid-dispatch/
+    cd /tmp/artifacts
+    tar xzf "$DISTRO_NAME.tgz"
+    
+    mv run_qdr.sh qdrouterd.conf.template colocated-topic.snippet ssl.snippet subscriptions.snippet amqp-kafka-bridge.snippet /etc/qpid-dispatch/
 }

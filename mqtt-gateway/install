@@ -9,7 +9,7 @@ mkdir --parents /opt/mqtt-gateway
 # unpack
 {
     cd /tmp/artifacts
-    tar xzf "$DISTRO_NAME.tar.gz"
+    tar xzf "$DISTRO_NAME.tgz"
     mv mqtt-gateway.jar /opt/mqtt-gateway
 }
 
