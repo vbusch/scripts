@@ -31,4 +31,4 @@ fi
 if [ -n "$AMQP_KAFKA_BRIDGE_SERVICE_HOST" ]; then
     envsubst < /etc/qpid-dispatch/amqp-kafka-bridge.snippet >> /tmp/qdrouterd.conf
 fi
-exec /sbin/qdrouterd --conf /tmp/qdrouterd.conf
+exec /usr/sbin/qdrouterd --conf /tmp/qdrouterd.conf

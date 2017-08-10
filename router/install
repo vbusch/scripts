@@ -3,6 +3,7 @@
 set -e
 
 SCRIPT_DIR=$(dirname $0)
+ADDED_DIR=${SCRIPT_DIR}/added
 
 mkdir --parents /etc/qpid-dispatch/
 
@@ -10,6 +11,6 @@ mkdir --parents /etc/qpid-dispatch/
 {
     cd /tmp/artifacts
     tar xzf "$DISTRO_NAME.tgz"
-    
+    mv $ADDED_DIR /etc/qpid-dispatch/
     mv run_qdr.sh qdrouterd.conf.template colocated-topic.snippet ssl.snippet subscriptions.snippet amqp-kafka-bridge.snippet /etc/qpid-dispatch/
 }
